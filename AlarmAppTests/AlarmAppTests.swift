@@ -56,12 +56,25 @@ class AlarmAppTests: XCTestCase {
      
     }
     
-    func testAlarmSet_FAILED(){
-        viewModel!.setAlarm(title: "Wake UP", timeInterval: 60.0)
+    func test_Validation_Failed(){
+        viewModel!.setAlarm(title: "", timeInterval: 0.0)
         wait(for: 2.0)
         let value = viewModel!.isAlarmSet.value
-        print(value)
         XCTAssertTrue(value == false, "Success")
+        
+    }
+    
+    func testEmptyTitleAndTimeInterval(){
+        let center = UNUserNotificationCenter.current()
+        center.removeAllPendingNotificationRequests()
+        
+        viewModel!.setAlarm(title: "", timeInterval: 0.0)
+        
+        center.getPendingNotificationRequests {pendingNotifications in
+            XCTAssertTrue(pendingNotifications.count == 0, "Success")
+
+        }
+        wait(for: 1.0)
         
     }
     
