@@ -14,6 +14,7 @@ import UserNotifications
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
+    var app: Application?
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
@@ -21,7 +22,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         UNUserNotificationCenter.current().delegate = self
 
         registerForNotifications(application)
-
+        
+        let window = UIWindow(frame: UIScreen.main.bounds)
+        self.app = Application(window:window)
+        self.window = window
+        
+        let _ = self.app?.navigation
         
         return true
     }

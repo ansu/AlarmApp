@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		8818C0C01F53BEB200DA529C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8818C0BF1F53BEB200DA529C /* AppDelegate.swift */; };
-		8818C0C21F53BEB200DA529C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8818C0C11F53BEB200DA529C /* ViewController.swift */; };
 		8818C0C51F53BEB200DA529C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8818C0C31F53BEB200DA529C /* Main.storyboard */; };
 		8818C0C71F53BEB200DA529C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8818C0C61F53BEB200DA529C /* Assets.xcassets */; };
 		8818C0CA1F53BEB200DA529C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8818C0C81F53BEB200DA529C /* LaunchScreen.storyboard */; };
@@ -16,6 +15,15 @@
 		8818C0E01F53BEB200DA529C /* AlarmAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8818C0DF1F53BEB200DA529C /* AlarmAppUITests.swift */; };
 		8818C0EE1F53CAB800DA529C /* Notifications.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8818C0ED1F53CAB800DA529C /* Notifications.swift */; };
 		8818C0F01F53CC7800DA529C /* out1.caf in Resources */ = {isa = PBXBuildFile; fileRef = 8818C0EF1F53CC7800DA529C /* out1.caf */; };
+		8818C0F21F53D9B200DA529C /* AlarmItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8818C0F11F53D9B200DA529C /* AlarmItem.swift */; };
+		8818C0F41F53D9F300DA529C /* AlarmItemList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8818C0F31F53D9F300DA529C /* AlarmItemList.swift */; };
+		8818C0F81F53EA4700DA529C /* Application.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8818C0F61F53EA4700DA529C /* Application.swift */; };
+		8818C0F91F53EA4700DA529C /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8818C0F71F53EA4700DA529C /* Router.swift */; };
+		8818C0FD1F53EA9B00DA529C /* Dynamic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8818C0FB1F53EA9B00DA529C /* Dynamic.swift */; };
+		8818C0FE1F53EA9B00DA529C /* UIStoryBoard+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8818C0FC1F53EA9B00DA529C /* UIStoryBoard+Extension.swift */; };
+		8818C1011F53EBAE00DA529C /* AlarmViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8818C1001F53EBAE00DA529C /* AlarmViewModel.swift */; };
+		8818C1031F53EBC300DA529C /* AlarmVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8818C1021F53EBC300DA529C /* AlarmVC.swift */; };
+		8818C1061F53F25900DA529C /* Utility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8818C1051F53F25900DA529C /* Utility.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,7 +46,6 @@
 /* Begin PBXFileReference section */
 		8818C0BC1F53BEB200DA529C /* AlarmApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AlarmApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8818C0BF1F53BEB200DA529C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		8818C0C11F53BEB200DA529C /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		8818C0C41F53BEB200DA529C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		8818C0C61F53BEB200DA529C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		8818C0C91F53BEB200DA529C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -51,6 +58,15 @@
 		8818C0E11F53BEB200DA529C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8818C0ED1F53CAB800DA529C /* Notifications.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Notifications.swift; sourceTree = "<group>"; };
 		8818C0EF1F53CC7800DA529C /* out1.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = out1.caf; sourceTree = "<group>"; };
+		8818C0F11F53D9B200DA529C /* AlarmItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlarmItem.swift; sourceTree = "<group>"; };
+		8818C0F31F53D9F300DA529C /* AlarmItemList.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlarmItemList.swift; sourceTree = "<group>"; };
+		8818C0F61F53EA4700DA529C /* Application.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Application.swift; sourceTree = "<group>"; };
+		8818C0F71F53EA4700DA529C /* Router.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
+		8818C0FB1F53EA9B00DA529C /* Dynamic.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Dynamic.swift; sourceTree = "<group>"; };
+		8818C0FC1F53EA9B00DA529C /* UIStoryBoard+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIStoryBoard+Extension.swift"; sourceTree = "<group>"; };
+		8818C1001F53EBAE00DA529C /* AlarmViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlarmViewModel.swift; sourceTree = "<group>"; };
+		8818C1021F53EBC300DA529C /* AlarmVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlarmVC.swift; sourceTree = "<group>"; };
+		8818C1051F53F25900DA529C /* Utility.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Utility.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,14 +117,19 @@
 		8818C0BE1F53BEB200DA529C /* AlarmApp */ = {
 			isa = PBXGroup;
 			children = (
-				8818C0EF1F53CC7800DA529C /* out1.caf */,
+				8818C1041F53EC0F00DA529C /* Resources */,
+				8818C0FF1F53EB8900DA529C /* UI */,
+				8818C0FA1F53EA7C00DA529C /* Extensions */,
+				8818C0F51F53EA2A00DA529C /* Router */,
 				8818C0BF1F53BEB200DA529C /* AppDelegate.swift */,
-				8818C0C11F53BEB200DA529C /* ViewController.swift */,
 				8818C0C31F53BEB200DA529C /* Main.storyboard */,
 				8818C0C61F53BEB200DA529C /* Assets.xcassets */,
 				8818C0C81F53BEB200DA529C /* LaunchScreen.storyboard */,
 				8818C0CB1F53BEB200DA529C /* Info.plist */,
 				8818C0ED1F53CAB800DA529C /* Notifications.swift */,
+				8818C0F11F53D9B200DA529C /* AlarmItem.swift */,
+				8818C0F31F53D9F300DA529C /* AlarmItemList.swift */,
+				8818C1051F53F25900DA529C /* Utility.swift */,
 			);
 			path = AlarmApp;
 			sourceTree = "<group>";
@@ -129,6 +150,41 @@
 				8818C0E11F53BEB200DA529C /* Info.plist */,
 			);
 			path = AlarmAppUITests;
+			sourceTree = "<group>";
+		};
+		8818C0F51F53EA2A00DA529C /* Router */ = {
+			isa = PBXGroup;
+			children = (
+				8818C0F61F53EA4700DA529C /* Application.swift */,
+				8818C0F71F53EA4700DA529C /* Router.swift */,
+			);
+			name = Router;
+			sourceTree = "<group>";
+		};
+		8818C0FA1F53EA7C00DA529C /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				8818C0FB1F53EA9B00DA529C /* Dynamic.swift */,
+				8818C0FC1F53EA9B00DA529C /* UIStoryBoard+Extension.swift */,
+			);
+			name = Extensions;
+			sourceTree = "<group>";
+		};
+		8818C0FF1F53EB8900DA529C /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				8818C1001F53EBAE00DA529C /* AlarmViewModel.swift */,
+				8818C1021F53EBC300DA529C /* AlarmVC.swift */,
+			);
+			name = UI;
+			sourceTree = "<group>";
+		};
+		8818C1041F53EC0F00DA529C /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				8818C0EF1F53CC7800DA529C /* out1.caf */,
+			);
+			name = Resources;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -269,8 +325,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8818C0C21F53BEB200DA529C /* ViewController.swift in Sources */,
+				8818C1031F53EBC300DA529C /* AlarmVC.swift in Sources */,
+				8818C0F81F53EA4700DA529C /* Application.swift in Sources */,
 				8818C0EE1F53CAB800DA529C /* Notifications.swift in Sources */,
+				8818C1061F53F25900DA529C /* Utility.swift in Sources */,
+				8818C0FE1F53EA9B00DA529C /* UIStoryBoard+Extension.swift in Sources */,
+				8818C1011F53EBAE00DA529C /* AlarmViewModel.swift in Sources */,
+				8818C0F91F53EA4700DA529C /* Router.swift in Sources */,
+				8818C0F41F53D9F300DA529C /* AlarmItemList.swift in Sources */,
+				8818C0FD1F53EA9B00DA529C /* Dynamic.swift in Sources */,
+				8818C0F21F53D9B200DA529C /* AlarmItem.swift in Sources */,
 				8818C0C01F53BEB200DA529C /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -522,6 +586,7 @@
 				8818C0E61F53BEB200DA529C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		8818C0E71F53BEB200DA529C /* Build configuration list for PBXNativeTarget "AlarmAppTests" */ = {
 			isa = XCConfigurationList;
@@ -530,6 +595,7 @@
 				8818C0E91F53BEB200DA529C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		8818C0EA1F53BEB200DA529C /* Build configuration list for PBXNativeTarget "AlarmAppUITests" */ = {
 			isa = XCConfigurationList;
@@ -538,6 +604,7 @@
 				8818C0EC1F53BEB200DA529C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="HZQ-Mp-dsB">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -9,77 +9,58 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
-        <scene sceneID="tne-QT-ifu">
+        <!--AlarmVC-->
+        <scene sceneID="YyM-iT-dpv">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="AlarmApp" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="AlarmVC" id="aXN-Pd-yKz" customClass="AlarmVC" customModule="AlarmApp" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
-                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                        <viewControllerLayoutGuide type="top" id="oxL-8q-pDc"/>
+                        <viewControllerLayoutGuide type="bottom" id="MvS-Ip-z7I"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                    <view key="view" contentMode="scaleToFill" id="YMh-XR-bmK">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="kgJ-d8-5BK">
-                                <rect key="frame" x="0.0" y="124" width="375" height="216"/>
-                                <date key="date" timeIntervalSinceReferenceDate="525582126.15493703">
-                                    <!--2017-08-28 03:02:06 +0000-->
-                                </date>
-                            </datePicker>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lOP-nH-0qI">
-                                <rect key="frame" x="170" y="368" width="34" height="30"/>
-                                <state key="normal" title="Save"/>
-                                <connections>
-                                    <action selector="savePressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="cea-s6-fyZ"/>
-                                </connections>
-                            </button>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Enter Title" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="3Ae-RH-aX0">
-                                <rect key="frame" x="10" y="74" width="355" height="30"/>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Enter title" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="YPY-jx-SsF">
+                                <rect key="frame" x="10" y="40" width="355" height="30"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
+                            <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="bEK-d1-FLN">
+                                <rect key="frame" x="0.0" y="101" width="375" height="216"/>
+                                <date key="date" timeIntervalSinceReferenceDate="525594086.76223701">
+                                    <!--2017-08-28 06:21:26 +0000-->
+                                </date>
+                            </datePicker>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="blb-Jf-SrF">
+                                <rect key="frame" x="164" y="366" width="46" height="30"/>
+                                <state key="normal" title="Button"/>
+                                <connections>
+                                    <action selector="savePressed:" destination="aXN-Pd-yKz" eventType="touchUpInside" id="RVd-mU-NOR"/>
+                                </connections>
+                            </button>
                         </subviews>
-                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="3Ae-RH-aX0" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="10" id="0tG-Y0-1fk"/>
-                            <constraint firstAttribute="trailing" secondItem="kgJ-d8-5BK" secondAttribute="trailing" id="MIP-7T-oVM"/>
-                            <constraint firstItem="lOP-nH-0qI" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Npr-am-FIc"/>
-                            <constraint firstItem="kgJ-d8-5BK" firstAttribute="top" secondItem="3Ae-RH-aX0" secondAttribute="bottom" constant="20" id="ZHV-yP-2I7"/>
-                            <constraint firstAttribute="trailing" secondItem="3Ae-RH-aX0" secondAttribute="trailing" constant="10" id="Zce-DM-ego"/>
-                            <constraint firstItem="lOP-nH-0qI" firstAttribute="top" secondItem="kgJ-d8-5BK" secondAttribute="bottom" constant="28" id="h9z-Nv-Cfb"/>
-                            <constraint firstItem="kgJ-d8-5BK" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="ljQ-Nw-a9C"/>
-                            <constraint firstItem="3Ae-RH-aX0" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="10" id="rQz-PA-yzc"/>
+                            <constraint firstItem="YPY-jx-SsF" firstAttribute="leading" secondItem="YMh-XR-bmK" secondAttribute="leading" constant="10" id="8gi-Mp-MfJ"/>
+                            <constraint firstItem="bEK-d1-FLN" firstAttribute="top" secondItem="YPY-jx-SsF" secondAttribute="bottom" constant="31" id="9FK-zl-s6G"/>
+                            <constraint firstItem="blb-Jf-SrF" firstAttribute="centerX" secondItem="YMh-XR-bmK" secondAttribute="centerX" id="G4l-0Q-1j8"/>
+                            <constraint firstItem="bEK-d1-FLN" firstAttribute="leading" secondItem="YMh-XR-bmK" secondAttribute="leading" id="Iu8-ci-fTU"/>
+                            <constraint firstAttribute="trailing" secondItem="bEK-d1-FLN" secondAttribute="trailing" id="KBI-j0-g7n"/>
+                            <constraint firstAttribute="trailing" secondItem="YPY-jx-SsF" secondAttribute="trailing" constant="10" id="QYt-Ej-FN9"/>
+                            <constraint firstItem="blb-Jf-SrF" firstAttribute="top" secondItem="bEK-d1-FLN" secondAttribute="bottom" constant="49" id="nWe-x5-rF3"/>
+                            <constraint firstItem="YPY-jx-SsF" firstAttribute="top" secondItem="oxL-8q-pDc" secondAttribute="bottom" constant="20" id="oAL-lX-tSv"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="1kz-dQ-TZ4"/>
                     <connections>
-                        <outlet property="deadlinePicker" destination="kgJ-d8-5BK" id="neS-IF-HDv"/>
-                        <outlet property="titleField" destination="3Ae-RH-aX0" id="2uc-B0-Tm6"/>
+                        <outlet property="deadlinePicker" destination="bEK-d1-FLN" id="ILH-JX-paW"/>
+                        <outlet property="titleField" destination="YPY-jx-SsF" id="4gd-dF-B8w"/>
                     </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ws0-DH-nui" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1076" y="137.18140929535232"/>
-        </scene>
-        <!--Navigation Controller-->
-        <scene sceneID="a5N-ce-0mx">
-            <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="HZQ-Mp-dsB" sceneMemberID="viewController">
-                    <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Don-le-OZa">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <nil name="viewControllers"/>
-                    <connections>
-                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="5AR-sW-LOd"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="pHO-0Z-lWv" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="124" y="-545.57721139430294"/>
+            <point key="canvasLocation" x="1303" y="129"/>
         </scene>
     </scenes>
 </document>
