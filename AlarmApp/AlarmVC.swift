@@ -9,22 +9,23 @@
 import UIKit
 import UserNotifications
 
+
 class AlarmVC: UIViewController {
     
     
     var viewModel: AlarmViewModel!
-    var pickOption = [60, 80, 90, 100]
-
+    var pickOption = [60, 80, 90, 100,200,250]
+    @IBOutlet weak var titleField: UITextField!
+    @IBOutlet weak var pickerTextField: UITextField!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.setUpPicker()
         setupBinding()
-        // Do any additional setup after loading the view.
     }
     
-    
+    //This Method used for binding the view Model events.
     private func setupBinding(){
-        
         viewModel?.didError  = {  errorMsg in
             Utility.displayAlert(title: errorMsg)
         }
@@ -33,8 +34,6 @@ class AlarmVC: UIViewController {
         }
     }
 
-    @IBOutlet weak var titleField: UITextField!
-    @IBOutlet weak var pickerTextField: UITextField!
     
     @IBAction func savePressed(_ sender: UIButton) {
         viewModel.setAlarm(title: titleField.text ?? "", timeInterval: Double(pickerTextField.text ?? "0.0") ?? 0.0)

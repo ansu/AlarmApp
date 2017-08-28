@@ -29,28 +29,40 @@ class AlarmViewModelling:AlarmViewModel {
         if title == "" || timeInterval == 0.0 {
             self.didError?("Please enter valid title and Time Interval!")
         }else{
-            let content = UNMutableNotificationContent()
-            content.title = title
-            content.body = "Wake Up Alarm"
-            content.sound =  UNNotificationSound.init(named: "out1.caf")
-            content.categoryIdentifier = Notifications.Categories.Message.rawValue
-            let trigger = UNTimeIntervalNotificationTrigger(timeInterval: timeInterval, repeats: true)
-
-            let identifier = Notifications.Categories.Message.rawValue
-            let request = UNNotificationRequest(identifier: identifier, content: content, trigger: trigger)
-            let center = UNUserNotificationCenter.current()
-            center.add(request){ (error) in
-                if let theerror = error {
-                    self.isAlarmSet.value = false
-                    self.didError?("Something went wrong")
-                }else{
-                    self.isAlarmSet.value = true
-                    self.didSuccess?("Success")
-
-                }
+            let request = self.createLocalNotificationRequest(title: title, timeInterval: timeInterval)
+            self.registerNotification(request: request)
+        }
+    }
+    
+    //This method is used for create notification 
+    private func createLocalNotificationRequest(title:String, timeInterval:Double) -> UNNotificationRequest{
+        let content = UNMutableNotificationContent()
+        content.title = title
+        content.body = "Wake Up Alarm"
+        content.sound =  UNNotificationSound.init(named: "out1.caf")
+        content.categoryIdentifier = Notifications.Categories.Message.rawValue
+        let trigger = UNTimeIntervalNotificationTrigger(timeInterval: timeInterval, repeats: true)
+        
+        let identifier = Notifications.Categories.Message.rawValue
+        return  UNNotificationRequest(identifier: identifier, content: content, trigger: trigger)
+        
+    }
+    
+   
+    //This method is used to Register Notification.
+    private func registerNotification(request : UNNotificationRequest){
+        let center = UNUserNotificationCenter.current()
+        center.add(request){ (error) in
+            if let _ = error {
+                self.isAlarmSet.value = false
+                self.didError?("Something went wrong")
+            }else{
+                self.isAlarmSet.value = true
+                self.didSuccess?("Success")
                 
             }
         }
+
     }
 
 }
