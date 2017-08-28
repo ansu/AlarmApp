@@ -24,6 +24,8 @@ class AlarmViewModelling:AlarmViewModel {
     var didSuccess: ((String) -> Void)?
     private(set) var isAlarmSet : Dynamic<Bool> = Dynamic(false)
 
+    //This method validate the tile & timeinterval params.
+    // If valid create localnotifcation else show the error.
     func setAlarm(title:String,timeInterval:Double) {
         
         if title == "" || timeInterval == 0.0 {

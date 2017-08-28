@@ -15,8 +15,6 @@
 		8818C0E01F53BEB200DA529C /* AlarmAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8818C0DF1F53BEB200DA529C /* AlarmAppUITests.swift */; };
 		8818C0EE1F53CAB800DA529C /* Notifications.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8818C0ED1F53CAB800DA529C /* Notifications.swift */; };
 		8818C0F01F53CC7800DA529C /* out1.caf in Resources */ = {isa = PBXBuildFile; fileRef = 8818C0EF1F53CC7800DA529C /* out1.caf */; };
-		8818C0F21F53D9B200DA529C /* AlarmItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8818C0F11F53D9B200DA529C /* AlarmItem.swift */; };
-		8818C0F41F53D9F300DA529C /* AlarmItemList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8818C0F31F53D9F300DA529C /* AlarmItemList.swift */; };
 		8818C0F81F53EA4700DA529C /* Application.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8818C0F61F53EA4700DA529C /* Application.swift */; };
 		8818C0F91F53EA4700DA529C /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8818C0F71F53EA4700DA529C /* Router.swift */; };
 		8818C0FD1F53EA9B00DA529C /* Dynamic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8818C0FB1F53EA9B00DA529C /* Dynamic.swift */; };
@@ -58,8 +56,6 @@
 		8818C0E11F53BEB200DA529C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8818C0ED1F53CAB800DA529C /* Notifications.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Notifications.swift; sourceTree = "<group>"; };
 		8818C0EF1F53CC7800DA529C /* out1.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = out1.caf; sourceTree = "<group>"; };
-		8818C0F11F53D9B200DA529C /* AlarmItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlarmItem.swift; sourceTree = "<group>"; };
-		8818C0F31F53D9F300DA529C /* AlarmItemList.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlarmItemList.swift; sourceTree = "<group>"; };
 		8818C0F61F53EA4700DA529C /* Application.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Application.swift; sourceTree = "<group>"; };
 		8818C0F71F53EA4700DA529C /* Router.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
 		8818C0FB1F53EA9B00DA529C /* Dynamic.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Dynamic.swift; sourceTree = "<group>"; };
@@ -127,8 +123,6 @@
 				8818C0C81F53BEB200DA529C /* LaunchScreen.storyboard */,
 				8818C0CB1F53BEB200DA529C /* Info.plist */,
 				8818C0ED1F53CAB800DA529C /* Notifications.swift */,
-				8818C0F11F53D9B200DA529C /* AlarmItem.swift */,
-				8818C0F31F53D9F300DA529C /* AlarmItemList.swift */,
 				8818C1051F53F25900DA529C /* Utility.swift */,
 			);
 			path = AlarmApp;
@@ -332,9 +326,7 @@
 				8818C0FE1F53EA9B00DA529C /* UIStoryBoard+Extension.swift in Sources */,
 				8818C1011F53EBAE00DA529C /* AlarmViewModel.swift in Sources */,
 				8818C0F91F53EA4700DA529C /* Router.swift in Sources */,
-				8818C0F41F53D9F300DA529C /* AlarmItemList.swift in Sources */,
 				8818C0FD1F53EA9B00DA529C /* Dynamic.swift in Sources */,
-				8818C0F21F53D9B200DA529C /* AlarmItem.swift in Sources */,
 				8818C0C01F53BEB200DA529C /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
