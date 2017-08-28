@@ -53,7 +53,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         }
     }
     
-    
 
 }
 
@@ -74,5 +73,14 @@ extension AppDelegate: UNUserNotificationCenterDelegate {
         completionHandler()
 
     }
+    
+    func userNotificationCenter(_ center: UNUserNotificationCenter,
+                                willPresent notification: UNNotification,
+                                withCompletionHandler completionHandler: @escaping (UNNotificationPresentationOptions) -> Void) {
+        // New in iOS 10, we can show notifications when app is in foreground, by calling completion handler with our desired presentation type.
+        completionHandler(.alert)
+    }
+
+    
 }
 

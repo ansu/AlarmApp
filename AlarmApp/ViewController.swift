@@ -14,6 +14,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var titleField: UITextField!
     @IBOutlet weak var deadlinePicker: UIDatePicker!
     
+    @IBOutlet weak var repeatFlag: UISwitch!
     @IBAction func savePressed(_ sender: UIButton) {
    
         let content = UNMutableNotificationContent()
@@ -21,8 +22,9 @@ class ViewController: UIViewController {
         content.body = "Wake Up Alarm"
         content.sound =  UNNotificationSound.init(named: "out1.caf")
         content.categoryIdentifier = Notifications.Categories.Message.rawValue
-        let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 60, repeats: true)
         
+        let trigger =  UNCalendarNotificationTrigger.init(dateMatching: NSCalendar.current.dateComponents([.day, .month, .year, .hour, .minute], from: deadlinePicker.date), repeats: repeatFlag.isOn)
+
         let identifier = Notifications.Categories.Message.rawValue
         let request = UNNotificationRequest(identifier: identifier, content: content, trigger: trigger)
         let center = UNUserNotificationCenter.current()
