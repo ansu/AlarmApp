@@ -21,7 +21,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Override point for customization after application launch.
         UNUserNotificationCenter.current().delegate = self
 
-        registerForNotifications(application)
+        registerForNotifications()
         
         let window = UIWindow(frame: UIScreen.main.bounds)
         self.app = Application(window:window)
@@ -33,7 +33,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
 
     
-    func registerForNotifications(_ application: UIApplication) {
+    func registerForNotifications() {
         
         let center = UNUserNotificationCenter.current()
         let options: UNAuthorizationOptions = [.alert, .badge,.sound]
@@ -84,7 +84,7 @@ extension AppDelegate: UNUserNotificationCenterDelegate {
                                 willPresent notification: UNNotification,
                                 withCompletionHandler completionHandler: @escaping (UNNotificationPresentationOptions) -> Void) {
         // New in iOS 10, we can show notifications when app is in foreground, by calling completion handler with our desired presentation type.
-        completionHandler(.alert)
+//        completionHandler(.alert)
     }
 
     

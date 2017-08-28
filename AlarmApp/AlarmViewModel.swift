@@ -11,42 +11,45 @@ import UserNotifications
 
 protocol AlarmViewModel {
     
-    func setAlarm(title:String)
-    
+    func setAlarm(title:String,timeInterval:Double)
     var didError: ((String) -> Void)? { get set }
     var didSuccess: ((String) -> Void)? { get set }
+    var isAlarmSet:Dynamic<Bool> { get }
 
-    
 }
 
 class AlarmViewModelling:AlarmViewModel {
     
     var didError:((String) -> Void)?
     var didSuccess: ((String) -> Void)?
-    
-    func setAlarm(title: String = "Alarm") {
-        
-        let content = UNMutableNotificationContent()
-        content.title = title
-        content.body = "Wake Up Alarm"
-        content.sound =  UNNotificationSound.init(named: "out1.caf")
-        content.categoryIdentifier = Notifications.Categories.Message.rawValue
-        
-        let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 60, repeats: true)
+    private(set) var isAlarmSet : Dynamic<Bool> = Dynamic(false)
 
-//        let trigger =  UNCalendarNotificationTrigger.init(dateMatching: NSCalendar.current.dateComponents([.day, .month, .year, .hour, .minute], from: deadlinePicker.date), repeats: true)
+    func setAlarm(title:String,timeInterval:Double) {
         
-        let identifier = Notifications.Categories.Message.rawValue
-        let request = UNNotificationRequest(identifier: identifier, content: content, trigger: trigger)
-        let center = UNUserNotificationCenter.current()
-        center.add(request){ (error) in
-            if let theerror = error {
-                self.didError?("Something went wrong")
-            }else{
-                self.didSuccess?("Success")
+        if title == "" || timeInterval == 0.0 {
+            self.didError?("Please enter valid title and Time Interval!")
+        }else{
+            let content = UNMutableNotificationContent()
+            content.title = title
+            content.body = "Wake Up Alarm"
+            content.sound =  UNNotificationSound.init(named: "out1.caf")
+            content.categoryIdentifier = Notifications.Categories.Message.rawValue
+            let trigger = UNTimeIntervalNotificationTrigger(timeInterval: timeInterval, repeats: true)
 
+            let identifier = Notifications.Categories.Message.rawValue
+            let request = UNNotificationRequest(identifier: identifier, content: content, trigger: trigger)
+            let center = UNUserNotificationCenter.current()
+            center.add(request){ (error) in
+                if let theerror = error {
+                    self.isAlarmSet.value = false
+                    self.didError?("Something went wrong")
+                }else{
+                    self.isAlarmSet.value = true
+                    self.didSuccess?("Success")
+
+                }
+                
             }
-            
         }
     }
 
