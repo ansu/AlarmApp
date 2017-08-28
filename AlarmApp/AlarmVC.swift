@@ -20,6 +20,7 @@ class AlarmVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.title = "Add Notifation"
         self.setUpPicker()
         setupBinding()
     }
@@ -87,6 +88,13 @@ extension AlarmVC:UIPickerViewDataSource, UIPickerViewDelegate{
     
     
     
+}
+
+extension AlarmVC:UITextFieldDelegate {
+    
+    func textFieldDidBeginEditing(_ textField: UITextField) {
+        textField.text = ""
+    }
 }
 
 

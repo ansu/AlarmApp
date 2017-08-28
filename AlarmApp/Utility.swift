@@ -8,7 +8,7 @@
 
 import Foundation
 import UIKit
-
+import UserNotifications
 struct Utility {
     
     static func displayAlert(title: String) {
@@ -24,6 +24,17 @@ struct Utility {
             } else {
                 vc.present(alertController, animated: true, completion: nil)
             }
+        }
+    }
+    
+    static func userOptedInForLocalNotifications(completion:@escaping (Bool) -> Void)   {
+        let center = UNUserNotificationCenter.current()
+        center.getNotificationSettings { settings in
+            if settings.authorizationStatus != .authorized {
+                completion(false)
+            }
+            completion(true)
+            
         }
     }
 

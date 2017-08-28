@@ -28,13 +28,25 @@ class AlarmViewModelling:AlarmViewModel {
     // If valid create localnotifcation else show the error.
     func setAlarm(title:String,timeInterval:Double) {
         
-        if title == "" || timeInterval == 0.0 {
-            self.didError?("Please enter valid title and Time Interval!")
-        }else{
-            let request = self.createLocalNotificationRequest(title: title, timeInterval: timeInterval)
-            self.registerNotification(request: request)
+        Utility.userOptedInForLocalNotifications { [weak self] status in
+            print(status)
+            if status {
+                if title == "" || timeInterval == 0.0 {
+                    self?.didError?("Please enter valid title and Time Interval!")
+                }else{
+                    let request = self?.createLocalNotificationRequest(title: title, timeInterval: timeInterval)
+                    self?.registerNotification(request: request!)
+                }
+
+            }else {
+                self?.didError?("Please enable notification in settings -> Notification -> LocalNotifyDemo")
+            }
+            
+            
         }
     }
+    
+    
     
     //This method is used for create notification 
     private func createLocalNotificationRequest(title:String, timeInterval:Double) -> UNNotificationRequest{
