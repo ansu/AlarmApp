@@ -15,7 +15,7 @@ if user press on stop, app remove all pending notifications.
 ## Key-Things
 
 1: **Router:** This class takes care routing and all dependecies which are required for any controller or models.  
-2: AlarmVC class takes the data from AlarmViewModelling. All business logic lies inside GameViewModelling class. 
+2: AlarmVC class takes the data from AlarmViewModelling. All business logic lies inside AlarmViewModelling class. 
 
 
 ## Learning 
