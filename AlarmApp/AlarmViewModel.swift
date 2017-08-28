@@ -32,14 +32,14 @@ class AlarmViewModelling:AlarmViewModel {
             print(status)
             if status {
                 if title == "" || timeInterval == 0.0 {
-                    self?.didError?("Please enter valid title and Time Interval!")
+                    self?.didError?(AppConstants.AlarmVC.emptyTitleOrTimeIntervalErrorMsg)
                 }else{
                     let request = self?.createLocalNotificationRequest(title: title, timeInterval: timeInterval)
                     self?.registerNotification(request: request!)
                 }
 
             }else {
-                self?.didError?("Please enable notification in settings -> Notification -> LocalNotifyDemo")
+                self?.didError?(AppConstants.AlarmVC.notificationDontAllowPermissionMsg)
             }
             
             
@@ -69,10 +69,10 @@ class AlarmViewModelling:AlarmViewModel {
         center.add(request){ (error) in
             if let _ = error {
                 self.isAlarmSet.value = false
-                self.didError?("Something went wrong")
+                self.didError?(AppConstants.AlarmVC.somethingWentWrong)
             }else{
                 self.isAlarmSet.value = true
-                self.didSuccess?("Success")
+                self.didSuccess?(AppConstants.AlarmVC.successMsg)
                 
             }
         }

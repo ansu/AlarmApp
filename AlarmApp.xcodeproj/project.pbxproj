@@ -22,6 +22,7 @@
 		8818C1011F53EBAE00DA529C /* AlarmViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8818C1001F53EBAE00DA529C /* AlarmViewModel.swift */; };
 		8818C1031F53EBC300DA529C /* AlarmVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8818C1021F53EBC300DA529C /* AlarmVC.swift */; };
 		8818C1061F53F25900DA529C /* Utility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8818C1051F53F25900DA529C /* Utility.swift */; };
+		8818C1091F54455700DA529C /* AppConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8818C1081F54455700DA529C /* AppConstants.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -63,6 +64,7 @@
 		8818C1001F53EBAE00DA529C /* AlarmViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlarmViewModel.swift; sourceTree = "<group>"; };
 		8818C1021F53EBC300DA529C /* AlarmVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlarmVC.swift; sourceTree = "<group>"; };
 		8818C1051F53F25900DA529C /* Utility.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Utility.swift; sourceTree = "<group>"; };
+		8818C1081F54455700DA529C /* AppConstants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppConstants.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -113,6 +115,7 @@
 		8818C0BE1F53BEB200DA529C /* AlarmApp */ = {
 			isa = PBXGroup;
 			children = (
+				8818C1071F54454800DA529C /* Constatns */,
 				8818C1041F53EC0F00DA529C /* Resources */,
 				8818C0FF1F53EB8900DA529C /* UI */,
 				8818C0FA1F53EA7C00DA529C /* Extensions */,
@@ -179,6 +182,14 @@
 				8818C0EF1F53CC7800DA529C /* out1.caf */,
 			);
 			name = Resources;
+			sourceTree = "<group>";
+		};
+		8818C1071F54454800DA529C /* Constatns */ = {
+			isa = PBXGroup;
+			children = (
+				8818C1081F54455700DA529C /* AppConstants.swift */,
+			);
+			name = Constatns;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -328,6 +339,7 @@
 				8818C0F91F53EA4700DA529C /* Router.swift in Sources */,
 				8818C0FD1F53EA9B00DA529C /* Dynamic.swift in Sources */,
 				8818C0C01F53BEB200DA529C /* AppDelegate.swift in Sources */,
+				8818C1091F54455700DA529C /* AppConstants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
