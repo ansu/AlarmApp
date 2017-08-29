@@ -30,10 +30,16 @@ class AlarmVC: UIViewController {
         viewModel?.didError  = {  errorMsg in
             Utility.displayAlert(title: errorMsg)
         }
-        viewModel?.didSuccess = {  succcessMsg in
+        viewModel?.didSuccess = {  [weak self] succcessMsg in
+            DispatchQueue.main.async {
+                self?.titleField.text = AppConstants.AlarmVC.titlePlaceholderText
+                self?.pickerTextField.text = AppConstants.AlarmVC.timeIntervalPlaceholderText
+            }
             Utility.displayAlert(title: succcessMsg)
         }
     }
+    
+    
 
     
     @IBAction func savePressed(_ sender: UIButton) {

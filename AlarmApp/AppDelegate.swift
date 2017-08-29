@@ -68,13 +68,7 @@ extension AppDelegate: UNUserNotificationCenterDelegate {
                                 didReceive response: UNNotificationResponse,
                                 withCompletionHandler completionHandler: @escaping () -> Void) {
         
-        if response.actionIdentifier == Notifications.Actions.Snooze.rawValue {
-            print("snooze")
-            
-        }else if response.actionIdentifier == Notifications.Actions.Stop.rawValue {
-            print("stop & move app in forground")
-            center.removeAllPendingNotificationRequests()
-        }
+        NotificationParser.shared.handleNotification(response)
         
         completionHandler()
 

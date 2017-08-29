@@ -23,6 +23,7 @@
 		8818C1031F53EBC300DA529C /* AlarmVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8818C1021F53EBC300DA529C /* AlarmVC.swift */; };
 		8818C1061F53F25900DA529C /* Utility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8818C1051F53F25900DA529C /* Utility.swift */; };
 		8818C1091F54455700DA529C /* AppConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8818C1081F54455700DA529C /* AppConstants.swift */; };
+		8818C10B1F55A06900DA529C /* NotificationParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8818C10A1F55A06900DA529C /* NotificationParser.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -65,6 +66,7 @@
 		8818C1021F53EBC300DA529C /* AlarmVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlarmVC.swift; sourceTree = "<group>"; };
 		8818C1051F53F25900DA529C /* Utility.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Utility.swift; sourceTree = "<group>"; };
 		8818C1081F54455700DA529C /* AppConstants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppConstants.swift; sourceTree = "<group>"; };
+		8818C10A1F55A06900DA529C /* NotificationParser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotificationParser.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -127,6 +129,7 @@
 				8818C0CB1F53BEB200DA529C /* Info.plist */,
 				8818C0ED1F53CAB800DA529C /* Notifications.swift */,
 				8818C1051F53F25900DA529C /* Utility.swift */,
+				8818C10A1F55A06900DA529C /* NotificationParser.swift */,
 			);
 			path = AlarmApp;
 			sourceTree = "<group>";
@@ -332,6 +335,7 @@
 			files = (
 				8818C1031F53EBC300DA529C /* AlarmVC.swift in Sources */,
 				8818C0F81F53EA4700DA529C /* Application.swift in Sources */,
+				8818C10B1F55A06900DA529C /* NotificationParser.swift in Sources */,
 				8818C0EE1F53CAB800DA529C /* Notifications.swift in Sources */,
 				8818C1061F53F25900DA529C /* Utility.swift in Sources */,
 				8818C0FE1F53EA9B00DA529C /* UIStoryBoard+Extension.swift in Sources */,

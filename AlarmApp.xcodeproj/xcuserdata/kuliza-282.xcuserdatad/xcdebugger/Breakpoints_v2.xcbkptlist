@@ -47,7 +47,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "59"
             endingLineNumber = "59"
-            landmarkName = "test_Validation_Failed()"
+            landmarkName = "testValidationFailed()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

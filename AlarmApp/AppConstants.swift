@@ -15,6 +15,9 @@ struct AppConstants {
         static let emptyTitleOrTimeIntervalErrorMsg = "Please enter valid title and Time Interval!"
         static let somethingWentWrong = "Something Went Wrong!"
         static let successMsg = "Success !!"
+        
+        static let titlePlaceholderText = "Enter Title"
+        static let timeIntervalPlaceholderText = "Enter TimeInterval"
 
     }
    
