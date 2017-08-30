@@ -25,13 +25,35 @@ extension XCTestCase {
     }
 }
 
+class LocalNotificatioSchedulerTestable : LocalNotificationSchedulable {
+    
+    var notificationsCancelled = false
+
+    func cancelAllLocalNotifications() {
+        notificationsCancelled = true
+    }
+    
+    func getLocalNotificationPermissionStatus(completion:@escaping (Bool) -> Void) {
+        completion(true)
+    }
+    
+    func scheduleNotifcation(request:UNNotificationRequest, completion:@escaping (Bool) -> Void){
+        completion(true)
+    }
+
+}
+
+
 class AlarmAppTests: XCTestCase {
     
     var viewModel:AlarmViewModel?
-
+    let application = LocalNotificatioSchedulerTestable()
+    var localNotificationScheduler : LocalNotificationScheduler?
     override func setUp() {
         super.setUp()
-        viewModel = AlarmViewModelling()
+        self.localNotificationScheduler = LocalNotificationScheduler(application: self.application as! LocalNotificationSchedulable)
+        
+        viewModel = AlarmViewModelling(scheduler: self.localNotificationScheduler!)
 
         // Put setup code here. This method is called before the invocation of each test method in the class.
     }
@@ -61,9 +83,11 @@ class AlarmAppTests: XCTestCase {
         
     }
     
-    
-    
-
+    func testUserOptedInPermission(){
+        self.localNotificationScheduler?.userOptedInForLocalNotifications {  status in
+            XCTAssert(status == true, "Success")
+        }
+    }
     
     
     func testExample() {

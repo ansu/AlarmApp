@@ -16,7 +16,6 @@ protocol AlarmViewModel {
     func createLocalNotificationRequest(title:String, timeInterval:Double) -> UNNotificationRequest
     var didError: ((String) -> Void)? { get set }
     var didSuccess: ((String) -> Void)? { get set }
-    var isAlarmSet:Dynamic<Bool> { get }
 
 }
 
@@ -24,29 +23,28 @@ class AlarmViewModelling:AlarmViewModel {
     
     var didError:((String) -> Void)?
     var didSuccess: ((String) -> Void)?
-    private(set) var isAlarmSet : Dynamic<Bool> = Dynamic(false)
-
+    let scheduler : LocalNotificationScheduler
+    
+    init(scheduler:LocalNotificationScheduler){
+        self.scheduler = scheduler
+    }
+    
     
     //This method validate the tile & timeinterval params.
     // If valid create localnotifcation else show the error.
     func setAlarm(title:String,timeInterval:Double) {
         
-        Utility.userOptedInForLocalNotifications { [weak self] status in
-            print(status)
+        scheduler.userOptedInForLocalNotifications { [weak self] status in
             if status {
-                if title == "" || timeInterval == 0.0 {
-                    self?.didError?(AppConstants.AlarmVC.emptyTitleOrTimeIntervalErrorMsg)
-                }else{
                     let request = self?.createLocalNotificationRequest(title: title, timeInterval: timeInterval)
                     self?.registerNotification(request: request!)
-                }
-                
             }else {
                 self?.didError?(AppConstants.AlarmVC.notificationDontAllowPermissionMsg)
             }
             
         }
     }
+    
     
     func validate(title:String,timeInterval:Double) -> Bool {
         if title == "" || timeInterval == 0.0 {
@@ -75,19 +73,16 @@ class AlarmViewModelling:AlarmViewModel {
     
    
     //This method is used to Register Notification.
-    private func registerNotification(request : UNNotificationRequest){
-        let center = UNUserNotificationCenter.current()
-        center.add(request){ (error) in
-            if let _ = error {
-                self.isAlarmSet.value = false
-                self.didError?(AppConstants.AlarmVC.somethingWentWrong)
-            }else{
-                self.isAlarmSet.value = true
+    func registerNotification(request : UNNotificationRequest){
+        scheduler.registerNotification(request: request) { status in
+            if status {
                 self.didSuccess?(AppConstants.AlarmVC.successMsg)
-                
+            }else{
+                self.didError?(AppConstants.AlarmVC.somethingWentWrong)
             }
+            
         }
-
+        
     }
 
 }

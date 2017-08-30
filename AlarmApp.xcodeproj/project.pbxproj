@@ -24,6 +24,8 @@
 		8818C1061F53F25900DA529C /* Utility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8818C1051F53F25900DA529C /* Utility.swift */; };
 		8818C1091F54455700DA529C /* AppConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8818C1081F54455700DA529C /* AppConstants.swift */; };
 		8818C10B1F55A06900DA529C /* NotificationParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8818C10A1F55A06900DA529C /* NotificationParser.swift */; };
+		8862C8001F568E1600441620 /* LocalNotificationScheduler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8862C7FF1F568E1600441620 /* LocalNotificationScheduler.swift */; };
+		8862C8021F56BA4000441620 /* ApplicationExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8862C8011F56BA4000441620 /* ApplicationExtension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -67,6 +69,8 @@
 		8818C1051F53F25900DA529C /* Utility.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Utility.swift; sourceTree = "<group>"; };
 		8818C1081F54455700DA529C /* AppConstants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppConstants.swift; sourceTree = "<group>"; };
 		8818C10A1F55A06900DA529C /* NotificationParser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotificationParser.swift; sourceTree = "<group>"; };
+		8862C7FF1F568E1600441620 /* LocalNotificationScheduler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocalNotificationScheduler.swift; sourceTree = "<group>"; };
+		8862C8011F56BA4000441620 /* ApplicationExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApplicationExtension.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -130,6 +134,7 @@
 				8818C0ED1F53CAB800DA529C /* Notifications.swift */,
 				8818C1051F53F25900DA529C /* Utility.swift */,
 				8818C10A1F55A06900DA529C /* NotificationParser.swift */,
+				8862C7FF1F568E1600441620 /* LocalNotificationScheduler.swift */,
 			);
 			path = AlarmApp;
 			sourceTree = "<group>";
@@ -166,6 +171,7 @@
 			children = (
 				8818C0FB1F53EA9B00DA529C /* Dynamic.swift */,
 				8818C0FC1F53EA9B00DA529C /* UIStoryBoard+Extension.swift */,
+				8862C8011F56BA4000441620 /* ApplicationExtension.swift */,
 			);
 			name = Extensions;
 			sourceTree = "<group>";
@@ -333,12 +339,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8862C8001F568E1600441620 /* LocalNotificationScheduler.swift in Sources */,
 				8818C1031F53EBC300DA529C /* AlarmVC.swift in Sources */,
 				8818C0F81F53EA4700DA529C /* Application.swift in Sources */,
 				8818C10B1F55A06900DA529C /* NotificationParser.swift in Sources */,
 				8818C0EE1F53CAB800DA529C /* Notifications.swift in Sources */,
 				8818C1061F53F25900DA529C /* Utility.swift in Sources */,
 				8818C0FE1F53EA9B00DA529C /* UIStoryBoard+Extension.swift in Sources */,
+				8862C8021F56BA4000441620 /* ApplicationExtension.swift in Sources */,
 				8818C1011F53EBAE00DA529C /* AlarmViewModel.swift in Sources */,
 				8818C0F91F53EA4700DA529C /* Router.swift in Sources */,
 				8818C0FD1F53EA9B00DA529C /* Dynamic.swift in Sources */,

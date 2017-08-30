@@ -26,7 +26,10 @@ final class Router {
     }
 
     func start(){
-        let viewModel = AlarmViewModelling()
+        
+        let localNotificationScheduler = LocalNotificationScheduler(application: self.application as! LocalNotificationSchedulable)
+        
+        let viewModel = AlarmViewModelling(scheduler: localNotificationScheduler)
         let instance = UIStoryboard.mainStoryboard?.instantiateVC(AlarmVC.self)
         instance?.viewModel = viewModel
         self.navigationController = UINavigationController(rootViewController: instance!)
