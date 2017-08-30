@@ -56,11 +56,15 @@ class AlarmAppTests: XCTestCase {
      
     }
     
-    func test_Validation_Failed(){
-        viewModel!.setAlarm(title: "", timeInterval: 0.0)
-        wait(for: 2.0)
-        let value = viewModel!.isAlarmSet.value
-        XCTAssertTrue(value == false, "Success")
+    func testValidationFailed(){
+        let validateStatus = viewModel!.validate(title: "", timeInterval: 0.0)
+        XCTAssertTrue(validateStatus == false, "Success")
+        
+    }
+    
+    func testValidationSuccess(){
+        let validateStatus = viewModel!.validate(title: "Wakeup", timeInterval: 60.0)
+        XCTAssertTrue(validateStatus == true, "Success")
         
     }
     

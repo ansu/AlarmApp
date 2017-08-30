@@ -10,7 +10,8 @@ import Foundation
 import UserNotifications
 
 protocol AlarmViewModel {
-    
+
+    func validate(title:String,timeInterval:Double) -> Bool
     func setAlarm(title:String,timeInterval:Double)
     var didError: ((String) -> Void)? { get set }
     var didSuccess: ((String) -> Void)? { get set }
@@ -24,6 +25,7 @@ class AlarmViewModelling:AlarmViewModel {
     var didSuccess: ((String) -> Void)?
     private(set) var isAlarmSet : Dynamic<Bool> = Dynamic(false)
 
+    
     //This method validate the tile & timeinterval params.
     // If valid create localnotifcation else show the error.
     func setAlarm(title:String,timeInterval:Double) {
@@ -37,15 +39,24 @@ class AlarmViewModelling:AlarmViewModel {
                     let request = self?.createLocalNotificationRequest(title: title, timeInterval: timeInterval)
                     self?.registerNotification(request: request!)
                 }
-
+                
             }else {
                 self?.didError?(AppConstants.AlarmVC.notificationDontAllowPermissionMsg)
             }
             
-            
         }
     }
     
+    func validate(title:String,timeInterval:Double) -> Bool {
+        if title == "" || timeInterval == 0.0 {
+            self.didError?(AppConstants.AlarmVC.emptyTitleOrTimeIntervalErrorMsg)
+            return false
+        }
+        return true
+    }
+
+    
+       
     
     
     //This method is used for create notification 

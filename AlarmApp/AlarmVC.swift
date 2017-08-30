@@ -43,7 +43,11 @@ class AlarmVC: UIViewController {
 
     
     @IBAction func savePressed(_ sender: UIButton) {
-        viewModel.setAlarm(title: titleField.text ?? "", timeInterval: Double(pickerTextField.text ?? "0.0") ?? 0.0)
+        if viewModel.validate(title: titleField.text ?? "", timeInterval: Double(pickerTextField.text ?? "0.0") ?? 0.0) {
+            
+            viewModel.setAlarm(title: titleField.text!, timeInterval: Double(pickerTextField.text!)!)
+        }
+
      }
     
 
