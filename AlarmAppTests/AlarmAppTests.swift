@@ -41,21 +41,7 @@ class AlarmAppTests: XCTestCase {
         super.tearDown()
     }
     
- 
-    func testAlarmSet_TRUE(){
-        if let delegate = UIApplication.shared.delegate {
-            if let myDelegate = delegate as? AppDelegate {
-                myDelegate.registerForNotifications()
-            }
-        }
-        wait(for: 5.0)
-        viewModel!.setAlarm(title: "Wake UP", timeInterval: 60.0)
-        wait(for: 2.0)
-        let value = viewModel!.isAlarmSet.value
-        XCTAssertTrue(value == true, "Success")
-     
-    }
-    
+   
     func testValidationFailed(){
         let validateStatus = viewModel!.validate(title: "", timeInterval: 0.0)
         XCTAssertTrue(validateStatus == false, "Success")
@@ -68,20 +54,16 @@ class AlarmAppTests: XCTestCase {
         
     }
     
-    func testEmptyTitleAndTimeInterval(){
-        let center = UNUserNotificationCenter.current()
-        center.removeAllPendingNotificationRequests()
-        
-        viewModel!.setAlarm(title: "", timeInterval: 0.0)
-        
-        center.getPendingNotificationRequests {pendingNotifications in
-            XCTAssertTrue(pendingNotifications.count == 0, "Success")
-
-        }
-        wait(for: 1.0)
+    func testValidateLocalNotificationObject(){
+        let notificationRequest = viewModel!.createLocalNotificationRequest(title: "Wake up", timeInterval: 60.0)
+        let title = notificationRequest.content.title
+        XCTAssert(title == "Wake up", "Success")
         
     }
     
+    
+    
+
     
     
     func testExample() {

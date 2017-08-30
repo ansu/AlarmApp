@@ -13,6 +13,7 @@ protocol AlarmViewModel {
 
     func validate(title:String,timeInterval:Double) -> Bool
     func setAlarm(title:String,timeInterval:Double)
+    func createLocalNotificationRequest(title:String, timeInterval:Double) -> UNNotificationRequest
     var didError: ((String) -> Void)? { get set }
     var didSuccess: ((String) -> Void)? { get set }
     var isAlarmSet:Dynamic<Bool> { get }
@@ -60,14 +61,13 @@ class AlarmViewModelling:AlarmViewModel {
     
     
     //This method is used for create notification 
-    private func createLocalNotificationRequest(title:String, timeInterval:Double) -> UNNotificationRequest{
+    func createLocalNotificationRequest(title:String, timeInterval:Double) -> UNNotificationRequest{
         let content = UNMutableNotificationContent()
         content.title = title
         content.body = "Wake Up Alarm"
         content.sound =  UNNotificationSound.init(named: "out1.caf")
         content.categoryIdentifier = Notifications.Categories.Message.rawValue
         let trigger = UNTimeIntervalNotificationTrigger(timeInterval: timeInterval, repeats: true)
-        
         let identifier = Notifications.Categories.Message.rawValue
         return  UNNotificationRequest(identifier: identifier, content: content, trigger: trigger)
         
