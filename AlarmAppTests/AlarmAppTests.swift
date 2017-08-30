@@ -10,20 +10,20 @@ import XCTest
 @testable import AlarmApp
 import UserNotifications
 
-extension XCTestCase {
-    
-    func wait(for duration: TimeInterval) {
-        let waitExpectation = expectation(description: "Waiting")
-        
-        let when = DispatchTime.now() + duration
-        DispatchQueue.main.asyncAfter(deadline: when) {
-            waitExpectation.fulfill()
-        }
-        
-        // We use a buffer here to avoid flakiness with Timer on CI
-        waitForExpectations(timeout: duration + 0.5)
-    }
-}
+//extension XCTestCase {
+//    
+//    func wait(for duration: TimeInterval) {
+//        let waitExpectation = expectation(description: "Waiting")
+//        
+//        let when = DispatchTime.now() + duration
+//        DispatchQueue.main.asyncAfter(deadline: when) {
+//            waitExpectation.fulfill()
+//        }
+//        
+//        // We use a buffer here to avoid flakiness with Timer on CI
+//        waitForExpectations(timeout: duration + 0.5)
+//    }
+//}
 
 class LocalNotificatioSchedulerTestable : LocalNotificationSchedulable {
     
@@ -49,13 +49,13 @@ class AlarmAppTests: XCTestCase {
     var viewModel:AlarmViewModel?
     let application = LocalNotificatioSchedulerTestable()
     var localNotificationScheduler : LocalNotificationScheduler?
+    let semaphore = DispatchSemaphore(value: 0)
+    
     override func setUp() {
         super.setUp()
-        self.localNotificationScheduler = LocalNotificationScheduler(application: self.application as! LocalNotificationSchedulable)
-        
+        self.localNotificationScheduler = LocalNotificationScheduler(application: self.application)
         viewModel = AlarmViewModelling(scheduler: self.localNotificationScheduler!)
 
-        // Put setup code here. This method is called before the invocation of each test method in the class.
     }
     
     override func tearDown() {
@@ -84,10 +84,29 @@ class AlarmAppTests: XCTestCase {
     }
     
     func testUserOptedInPermission(){
+        
+        let expectationTest = expectation(description: "test")
+
         self.localNotificationScheduler?.userOptedInForLocalNotifications {  status in
             XCTAssert(status == true, "Success")
+            expectationTest.fulfill()
         }
+        self.waitForExpectations(timeout: 5) { (error) in
+            print(error)
+        }
+        
     }
+    
+    func testUserOptedInPermissionWithSemaphore(){
+        self.localNotificationScheduler?.userOptedInForLocalNotifications {  status in
+            XCTAssert(status == true, "Success")
+            self.semaphore.signal()
+            
+        }
+        self.semaphore.wait()
+        
+    }
+    
     
     
     func testExample() {
