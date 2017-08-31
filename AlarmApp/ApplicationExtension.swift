@@ -19,7 +19,6 @@ extension Application:LocalNotificationSchedulable {
         center.removeAllPendingNotificationRequests()
     }
     
-    
     func getLocalNotificationPermissionStatus(completion:@escaping (Bool) -> Void)   {
         let center = UNUserNotificationCenter.current()
         center.getNotificationSettings { settings in
@@ -27,7 +26,6 @@ extension Application:LocalNotificationSchedulable {
                 completion(false)
             }
             completion(true)
-            
         }
     }
     
