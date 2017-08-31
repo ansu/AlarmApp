@@ -16,7 +16,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
     var app: Application?
 
-
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         
         UNUserNotificationCenter.current().delegate = self
@@ -31,7 +30,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         return true
     }
 
-    
     func registerForNotifications() {
         
         let center = UNUserNotificationCenter.current()
@@ -72,15 +70,7 @@ extension AppDelegate: UNUserNotificationCenterDelegate {
         completionHandler()
 
     }
-    
-    func userNotificationCenter(_ center: UNUserNotificationCenter,
-                                willPresent notification: UNNotification,
-                                withCompletionHandler completionHandler: @escaping (UNNotificationPresentationOptions) -> Void) {
-        // New in iOS 10, we can show notifications when app is in foreground, by calling completion handler with our desired presentation type.
-//        completionHandler(.alert)
-    }
-
-    
+        
 }
 
 

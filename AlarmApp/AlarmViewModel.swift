@@ -29,7 +29,6 @@ class AlarmViewModelling:AlarmViewModel {
         self.scheduler = scheduler
     }
     
-    
     //This method validate the tile & timeinterval params.
     // If valid create localnotifcation else show the error.
     func setAlarm(title:String,timeInterval:Double) {
@@ -45,7 +44,6 @@ class AlarmViewModelling:AlarmViewModel {
         }
     }
     
-    
     func validate(title:String,timeInterval:Double) -> Bool {
         if title == "" || timeInterval == 0.0 {
             self.didError?(AppConstants.AlarmVC.emptyTitleOrTimeIntervalErrorMsg)
@@ -54,10 +52,6 @@ class AlarmViewModelling:AlarmViewModel {
         return true
     }
 
-    
-       
-    
-    
     //This method is used for create notification 
     func createLocalNotificationRequest(title:String, timeInterval:Double) -> UNNotificationRequest{
         let content = UNMutableNotificationContent()
@@ -71,7 +65,6 @@ class AlarmViewModelling:AlarmViewModel {
         
     }
     
-   
     //This method is used to Register Notification.
     func registerNotification(request : UNNotificationRequest){
         scheduler.registerNotification(request: request) { status in

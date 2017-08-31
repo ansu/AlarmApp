@@ -10,7 +10,6 @@ import XCTest
 @testable import AlarmApp
 import UserNotifications
 
-
 class LocalNotificatioSchedulerTestable : LocalNotificationSchedulable {
     
     var notificationsCancelled = false

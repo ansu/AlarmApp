@@ -9,9 +9,7 @@
 import UIKit
 import UserNotifications
 
-
 class AlarmVC: UIViewController {
-    
     
     var viewModel: AlarmViewModel!
     var pickOption = [60, 80, 90, 100,200,250]
@@ -39,9 +37,6 @@ class AlarmVC: UIViewController {
         }
     }
     
-    
-
-    
     @IBAction func savePressed(_ sender: UIButton) {
         if viewModel.validate(title: titleField.text ?? "", timeInterval: Double(pickerTextField.text ?? "0.0") ?? 0.0) {
             
@@ -49,8 +44,6 @@ class AlarmVC: UIViewController {
         }
 
      }
-    
-
     
 }
 

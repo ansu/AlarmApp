@@ -27,17 +27,4 @@ struct Utility {
         }
     }
     
-    
-    static func userOptedInForLocalNotifications(completion:@escaping (Bool) -> Void)   {
-        
-        let center = UNUserNotificationCenter.current()
-        center.getNotificationSettings { settings in
-            if settings.authorizationStatus != .authorized {
-                completion(false)
-            }
-            completion(true)
-            
-        }
-    }
-
 }

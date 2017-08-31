@@ -17,7 +17,6 @@ protocol LocalNotificationSchedulable : class {
 
 }
 
-
 class LocalNotificationScheduler : NSObject {
     let application : LocalNotificationSchedulable
 
@@ -30,9 +29,6 @@ class LocalNotificationScheduler : NSObject {
     }
     
     func userOptedInForLocalNotifications(completion:@escaping (Bool) -> Void) {
-//        print("before sleep")
-//        sleep(5)
-        
         application.getLocalNotificationPermissionStatus { status in
             completion(status)
         }

@@ -9,9 +9,6 @@
 import Foundation
 import UserNotifications
 
-
-
-
 extension Application:LocalNotificationSchedulable {
     
     func cancelAllLocalNotifications() {

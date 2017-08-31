@@ -8,7 +8,6 @@
 
 import Foundation
 
-
 enum Notifications {
     enum Categories: String {
         case Message
